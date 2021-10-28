@@ -1,11 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace Module3HW6_AsyncPractice
+﻿namespace Module3HW6_AsyncPractice
 {
-    class Program
+    using System.Threading.Tasks;
+
+    internal class Program
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
             Task t = Task.Factory.StartNew(() =>
             {
@@ -14,10 +13,18 @@ namespace Module3HW6_AsyncPractice
             t.Wait(10000);
         }
 
-        public static int FibonacciSeries(int n)
+       public static int FibonacciSeries(int n)
         {
-            if (n == 0) return 0;
-            if (n == 1) return 1;
+            if (n == 0)
+            {
+                return 0;
+            }
+
+            if (n == 1)
+            {
+                return 1;
+            }
+
             return FibonacciSeries(n - 1) + FibonacciSeries(n - 2);
         }
     }
